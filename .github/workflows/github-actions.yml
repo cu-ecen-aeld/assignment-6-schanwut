@@ -19,7 +19,7 @@ jobs:
           - name: Run build
             timeout-minutes: 600
             run: |
-               chmod -R 1000:1000
+               chmod -R 1000:1000 ${GITHUB_WORKSPACE}
                docker run --rm \
                  -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
@@ -34,7 +34,7 @@ jobs:
           - name: Run full test
             timeout-minutes: 15
             run: |
-               chmod -R 1000:1000
+               chmod -R 1000:1000 ${GITHUB_WORKSPACE}
                docker run --rm \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:assignment6-yocto \
