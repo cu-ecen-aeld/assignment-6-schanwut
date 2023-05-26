@@ -24,7 +24,7 @@ jobs:
                  -e GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" \
                  -v ${GITHUB_WORKSPACE}:${GITHUB_WORKSPACE} \
                  cuaesd/aesd-autotest:assignment6-yocto \
-                 --id 1000:1000 \
+                 --id 1001:1001 \
                  --workdir=${GITHUB_WORKSPACE} \
                  ./build.sh
           - name: Cleanup
